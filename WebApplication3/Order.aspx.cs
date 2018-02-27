@@ -13,11 +13,6 @@ namespace WebApplication3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
             MySqlConnection con = new MySqlConnection("server=localhost;user id=root;persistsecurityinfo=True;database=ecafe;password=root");
             con.Open();
             MySqlCommand cmd = new MySqlCommand("select * from fooditems", con);
@@ -28,6 +23,11 @@ namespace WebApplication3
             GridView1.DataBind();
             cmd.Dispose();
             con.Close();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
